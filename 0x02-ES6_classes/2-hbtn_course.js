@@ -1,23 +1,17 @@
 export default class HolbertonCourse {
   constructor(name, length, students) {
-    if (typeof name === 'string') {
-      this._name = name;
-    }
-    if (typeof length === 'number') {
-      this._length = length;
-    }
-    if (Array.isArray(students) && students.every((item) => typeof item === 'string')) {
-      this._students = students;
-    }
+    this._name = typeof name === 'string' ? name : '';
+    this._length = typeof length === 'number' ? length : 0;
+    this._students = Array.isArray(students) ? students : [];
   }
 
   get name() {
     return this._name;
   }
 
-  set name(newname) {
-    if (typeof newname === 'string') {
-      this._name = newname;
+  set name(value) {
+    if (typeof value === 'string') {
+      this._name = value;
     }
   }
 
@@ -25,9 +19,9 @@ export default class HolbertonCourse {
     return this._length;
   }
 
-  set length(newlength) {
-    if (typeof newlength === 'number') {
-      this._length = newlength;
+  set length(value) {
+    if (typeof value === 'number') {
+      this._length = value;
     }
   }
 
@@ -35,9 +29,9 @@ export default class HolbertonCourse {
     return this._students;
   }
 
-  set students(newstudents) {
-    if (Array.isArray(newstudents)) {
-      this._students = newstudents;
+  set students(value) {
+    if (Array.isArray(value)) {
+      this._students = value;
     }
   }
 }
