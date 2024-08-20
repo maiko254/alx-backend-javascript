@@ -4,7 +4,7 @@
  * @author Michael Bonyo <https://github.com/maiko254>
  */
 const displayMessage = (data) => {
-    process.stdout.write(data + '\n');
+    console.log(data);
 }
 
 module.exports = displayMessage;
