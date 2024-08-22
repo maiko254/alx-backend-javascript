@@ -39,7 +39,7 @@ describe('Available_payments page', function () {
     it('should respond with JSON object and status 200', function (done) {
         request('http://localhost:7865/available_payments', function (error, response, body) {
             expect(response.statusCode).to.equal(200);
-            expect(body).to.equal('{"payment_methods":{"credit_card":true,"paypal":false}}');
+            expect(JSON.parse(body)).to.be.deep.equal({payment_methods:{ credit_card: true, paypal: false }});
             done();
         });
     });

@@ -21,14 +21,14 @@ app.get('/cart/:id([0-9]+)', (req, res) => {
 
 app.get('/available_payments', (req, res) => {
     res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
-    res.send(
-        JSON.stringify({
-            payment_methods: {
-                credit_card: true,
-                paypal: false
-            }
-        })
+    res.setHeader('Content-Type', 'application/json');
+    res.json({
+        payment_methods: {
+            credit_card: true,
+            paypal: false
+        }
+    }
+            
     );
     res.end();
 });
