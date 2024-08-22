@@ -1,7 +1,6 @@
 const chai = require('chai');
 const expect = chai.expect;
 const request = require('request');
-const app = require('./api');
 
 describe('Index page', function () {
     it('should respond with message "Welcome to the payment system" and status 200', function (done) {
