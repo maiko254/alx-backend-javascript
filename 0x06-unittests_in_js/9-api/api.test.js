@@ -3,7 +3,7 @@ const expect = chai.expect;
 const request = require('request');
 const app = require('./api');
 
-describe('api', function () {
+describe('Index page', function () {
     it('should respond with message "Welcome to the payment system" and status 200', function (done) {
         request('http://localhost:7865', function (error, response, body) {
             expect(response.statusCode).to.equal(200);
@@ -11,6 +11,9 @@ describe('api', function () {
             done();
         });
     });
+});
+
+describe('Cart page', function () {
     it('should respond with message "Payment methods for cart 1" and status 200', function (done) {
         request('http://localhost:7865/cart/1', function (error, response, body) {
             expect(response.statusCode).to.equal(200);
