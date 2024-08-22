@@ -1,7 +1,6 @@
 // Used to test the API in 8-api/api.js
 const expect = require('chai').expect;
 const request = require('request');
-const app = require('./api');
 
 
 describe('Index page', function () {
