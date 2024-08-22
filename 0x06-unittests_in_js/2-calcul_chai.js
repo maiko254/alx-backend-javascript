@@ -12,4 +12,3 @@ function calculateNumber(type, a, b) {
 }
 
 module.exports = calculateNumber;
-console.log(calculateNumber('DIVIDE', 8, 0))
