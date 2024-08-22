@@ -1,6 +1,6 @@
 const chai = require('chai');
 const assert = chai.assert;
-const sendPaymentRequestToApi = require('./3-payment');
+const sendPaymentRequestToApi = require('./4-payment');
 const sinon = require('sinon');
 const Utils = require('./utils');
 
