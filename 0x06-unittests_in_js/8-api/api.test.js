@@ -17,4 +17,16 @@ describe('Index page', function () {
             done();
         });
     });
+    it('should respond with status 200', function (done) {
+        request('http://localhost:7865/', function (error, response, body) {
+            expect(response.statusCode).to.equal(200);
+            done();
+        });
+    });
+    it('should respond with status 404', function (done) {
+        request('http://localhost:7865/nope', function (error, response, body) {
+            expect(response.statusCode).to.equal(404);
+            done();
+        });
+    });
 });
