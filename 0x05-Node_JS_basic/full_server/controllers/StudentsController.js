@@ -17,10 +17,11 @@ class StudentsController {
           }
         }
         response.send(`This is the list of our students\n${dataList.join('\n')}`);
+      }).catch((error) => {
+        response.status(500).send('Cannot load the database');
       });
     } catch (error) {
-      response.status(500);
-      response.send('Cannot load the database');
+      console.log(error);
     }
   }
 
@@ -38,9 +39,11 @@ class StudentsController {
       readDatabase(db).then((data) => {
         const studentGroup = data[major];
         response.send(`List: ${studentGroup.join(',')}`);
+      }).catch((error) => {
+        response.status(500).send('Cannot load the database');
       });
     } catch (error) {
-      response.status(500).send('Cannot load the database');
+      console.log(error);
     }
   }
 }
